@@ -45,12 +45,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
 
             # Send gamepad input data to the Jetson Nano
             
-            if i < 3:
-                if (i == 1 or i == 2):
-                    data[i-1] = axis_value
-            else:
-                # Handle an index error if the joystick has more axes than expected
-                print(f"Index {i} is out of range for the data array")
+            if (i == 1 or i == 2):
+                data[i-1] = axis_value
+                
+            # if i < len(data):  
+            #    data[i] = axis_value
+            # else:
+            #     # Handle an index error if the joystick has more axes than expected
+            #     print(f"Index {i} is out of range for the data array")
 
         data_json = json.dumps(data)
         
