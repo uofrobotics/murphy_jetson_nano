@@ -1,6 +1,6 @@
 # main.py
 
-from jetson.udp_receive import receive_udp_and_send_uart
+from udp_receive import receive_udp_and_send_uart
 
 def main():
     # Call the receive_udp_data function

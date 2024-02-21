@@ -30,7 +30,7 @@ def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868, uart_port='
                 processed_data = process_input(joystick_data)
                 
                 # Send the processed data over UART
-                send_uart_data(processed_data, uart_port)
+                # send_uart_data(processed_data, uart_port)
                 
                 # Optional: Add a small delay to avoid flooding the UART interface
                 time.sleep(0.1)
