@@ -1,3 +1,4 @@
+import json
 import time
 import pygame
 import socket
@@ -47,24 +48,19 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
                 # Handle an index error if the joystick has more axes than expected
                 print(f"Index {i} is out of range for the data array")
 
-        data_bytes = str(data).encode('utf-8')
-
-        test_byte = str(1).encode('utf-8')
+        data_json = json.dumps(data)
+        
         try:
             # Send the data over UDP
             start_time = time.perf_counter_ns()
-            udp_socket.sendto(test_byte, (jetson_ip, jetson_port))
+            udp_socket.sendto(data_json.encode('utf-8'), (jetson_ip, jetson_port))
             end_time = time.perf_counter_ns()
             elapsed_time = end_time - start_time
-            print(f"Packet took {elapsed_time/1000} miliseconds to send")
+            print(f"Packet took {elapsed_time / 1000} milliseconds to send")
 
-            # t = time.time()
-            # udp_socket.sendto(test_byte, (jetson_ip, jetson_port))
-            # print(time.time() - t)
-            
         except Exception as e:
             print(f"Error sending data: {str(e)}")
-            # udp_socket.sendto(str(data).encode('utf-8'), (jetson_ip, jetson_port))
+            
 
         # Display the button states
         for i in range(joystick.get_numbuttons()):
