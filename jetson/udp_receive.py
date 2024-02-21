@@ -4,9 +4,10 @@ import socket
 import json
 import time
 from process_input import process_input
-from uart_send import send_uart_data
+from uart_send import MotorDriver
 
 def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868, uart_port='/dev/ttyUSB0'):
+    motor_driver = MotorDriver()
     print_count = 0
 
     # Create a UDP socket
@@ -29,8 +30,9 @@ def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868, uart_port='
                 # Process the received data
                 processed_data = process_input(joystick_data)
                 
+                # TODO: Change input going into motor_driver
                 # Send the processed data over UART
-                # send_uart_data(processed_data, uart_port)
+                # motor_driver.control_motors(processed_data)
                 
                 # Optional: Add a small delay to avoid flooding the UART interface
                 time.sleep(0.1)
