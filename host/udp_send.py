@@ -1,8 +1,10 @@
 import json
 import time
 import pygame
+from dotenv import load_dotenv
 import socket
 
+load_dotenv()
 # Initialize Pygame
 pygame.init()
 
@@ -17,8 +19,8 @@ pygame.display.set_caption("Gamepad Input")
 font = pygame.font.Font(None, 36)
 
 # JETSON NANO IP ADDRESS + PORT
-jetson_ip = '142.3.21.101'
-jetson_port = 6868 
+jetson_ip = os.getenv('JETSON_IP')
+jetson_port = int(os.getenv('JETSON_PORT'))
 
 # Create a UDP socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
