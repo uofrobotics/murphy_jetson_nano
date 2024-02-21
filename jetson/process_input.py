@@ -22,7 +22,7 @@ def match_input_to_curve(value):
     sensitivity = 10
     offset = 50
 
-    curved_value = int(128 / (1 + math.exp((-(abs(value)) + offset) / sensitivity)))
+    curved_value = 128 / (1 + math.exp((-(abs(value)) + offset) / sensitivity))
     print("Value after formula: ", curved_value)
     if value < 0:
         curved_value = -curved_value
