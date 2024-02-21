@@ -25,7 +25,12 @@ pip install -r requirements.txt
 
 1. Connect your controller input device (e.g., joystick) to the host computer.
 
-2. Modify the host_computer.py script to configure the IP address and port of the Jetson Nano (the receiver) and run it:
+2. Modify the `udp_send.py` script to configure the IP address and port of the Jetson Nano (the receiver) and run it:
 ```
-python3 host_computer.py
+python3 udp_send.py
 ```
+3. Modify the `udp_receive.py` script with the appropriate IP address and port and run it:
+```
+python3 main.py
+```
+
