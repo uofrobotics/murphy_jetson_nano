@@ -19,7 +19,7 @@ def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868):
         
         while True:
             # Receive data from the socket
-            data, addr = udp_socket.recvfrom(128)  # Buffer size is 1024 bytes
+            data, addr = udp_socket.recvfrom(56)  # Buffer size is 1024 bytes
             
             # Decode the received data as JSON
             try:
