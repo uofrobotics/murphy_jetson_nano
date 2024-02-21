@@ -36,7 +36,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
 
                 # Display the joystick values
         for i in range(joystick.get_numaxes()):
-            axis_value = joystick.get_axis(i)
+            axis_value = round(joystick.get_axis(i), 2)
             axis_text = font.render(f"Axis {i}: {axis_value:.2f}", True, (0, 0, 0))
             screen.blit(axis_text, (10, 50 + i * 40))
 
