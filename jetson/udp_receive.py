@@ -4,7 +4,7 @@ import socket
 import json
 import time
 from process_input import process_input
-from uart_send import MotorDriver
+# from uart_send import MotorDriver
 
 def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868, uart_port='/dev/ttyUSB0'):
     motor_driver = MotorDriver()
