@@ -33,12 +33,12 @@ def match_input_to_curve(value):
     return curved_value
 
 def mixing(y_axis, x_axis):
-
+    y_axis = -y_axis
     # Motor configurations
-    fl = -(y_axis + x_axis)  # Forward + Right
-    fr = -(y_axis - x_axis)  # Forward + Left
-    bl = -(y_axis - x_axis)  # Backward + Left
-    br = -(y_axis + x_axis)  # Backward + Right
+    fl = (y_axis + x_axis)  # Forward + Right
+    fr = (y_axis - x_axis)  # Forward + Left
+    bl = (y_axis - x_axis)  # Backward + Left
+    br = (y_axis + x_axis)  # Backward + Right
 
     # Limit motor speeds to the range -128 to 128
     fl = max(min(fr, 128), -128)
@@ -52,6 +52,6 @@ def mixing(y_axis, x_axis):
     print("Motor 3 Speed:", bl)
     print("Motor 4 Speed:", br)
 
-    motor_speeds = [fr, br, fl, bl]
+    motor_speeds = [fl, fr, bl, br]
 
     return motor_speeds 
