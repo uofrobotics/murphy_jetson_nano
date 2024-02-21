@@ -10,7 +10,7 @@ def process_input(data):
         processed_data.append(processed_value)
         
         # Apply the curve function to each value
-        curved_value = match_input_to_curve(value)
+        curved_value = match_input_to_curve(processed_value)
         curved_data.append(curved_value)
     
     print("Processed Data:", processed_data)
@@ -22,8 +22,8 @@ def match_input_to_curve(value):
     sensitivity = 10
     offset = 50
 
-    curved_value = 128 / (1 + math.exp((-(abs(value)) + offset) / sensitivity))
-    print("Value after formula: ", curved_value)
+    curved_value = int(128 / (1 + math.exp((-(abs(value)) + offset) / sensitivity)))
+
     if value < 0:
         curved_value = -curved_value
 
