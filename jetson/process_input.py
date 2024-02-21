@@ -51,6 +51,6 @@ def mixing(y_axis, x_axis):
     print("Motor 3 Speed:", bl)
     print("Motor 4 Speed:", br)
 
-    motor_speeds = [fl, fl, fl, fl]
+    motor_speeds = [fl, fr, bl, br]
 
     return motor_speeds 
