@@ -4,6 +4,7 @@ import json
 # JETSON NANO IP ADDRESS + PORT
 jetson_ip = '0.0.0.0'  # Listen on all available network interfaces
 jetson_port = 6868
+print_count = 0
 
 # Create a UDP socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
@@ -19,7 +20,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         # Decode the received data as JSON
         try:
             joystick_data = json.loads(data.decode('utf-8'))
-            print("Received joystick data:", joystick_data)
+            print_count+=1
+            print("(", print_count, ") Received joystick data:", joystick_data)
             
             # Process the received data here (e.g., control your robot)
             # Example:
