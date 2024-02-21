@@ -47,10 +47,8 @@ def mixing(y_axis, x_axis):
     br = max(min(br, 128), -128)
 
     # Print motor speeds for debugging
-    print("Motor 1 Speed:", fl)
-    print("Motor 2 Speed:", fr)
-    print("Motor 3 Speed:", bl)
-    print("Motor 4 Speed:", br)
+    print("fl Speed:", fl, " fr Speed:", fr)
+    print("bl Speed:", bl, " br Speed:", br)
 
     motor_speeds = [fl, fr, bl, br]
 
