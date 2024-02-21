@@ -3,6 +3,7 @@ import math
 def process_input(data):
     processed_data = []
     curved_data = []
+    final_data = []
     
     # Process each value in the data list
     for value in data:
@@ -16,7 +17,7 @@ def process_input(data):
     print("Processed Data:", processed_data)
     print("Curved Data:", curved_data)
     
-    return processed_data, curved_data
+    return final_data
 
 def match_input_to_curve(value):
     sensitivity = 10
