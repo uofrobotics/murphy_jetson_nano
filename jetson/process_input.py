@@ -33,8 +33,6 @@ def match_input_to_curve(value):
     return curved_value
 
 def mixing(y_axis, x_axis):
-    y_axis = -y_axis
-    x_axis = -x_axis
     # Motor configurations
     fr = (y_axis + x_axis)  # Forward + Right
     fl = (y_axis - x_axis)  # Forward + Left
