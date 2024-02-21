@@ -32,7 +32,7 @@ def receive_udp_and_send_uart(jetson_ip='0.0.0.0', jetson_port=6868):
                 
                 # TODO: Change input going into motor_driver
                 # Send the processed data over UART
-                motor_driver.control_motors(processed_data)
+                motor_driver.control_motors(processed_data[0], processed_data[1], processed_data[2], processed_data[3])
                 
                 # Optional: Add a small delay to avoid flooding the UART interface
                 time.sleep(0.1)
