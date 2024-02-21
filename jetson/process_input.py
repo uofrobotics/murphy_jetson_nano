@@ -35,23 +35,23 @@ def match_input_to_curve(value):
 def mixing(y_axis, x_axis):
 
     # Motor configurations
-    motor1_speed = -(y_axis + x_axis)  # Forward + Right
-    motor2_speed = -(y_axis - x_axis)  # Forward + Left
-    motor3_speed = -(y_axis - x_axis)  # Forward + Left
-    motor4_speed = -(y_axis + x_axis)  # Forward + Right
+    fl = -(y_axis + x_axis)  # Forward + Right
+    fr = -(y_axis - x_axis)  # Forward + Left
+    bl = -(y_axis - x_axis)  # Backward + Left
+    br = -(y_axis + x_axis)  # Backward + Right
 
     # Limit motor speeds to the range -128 to 128
-    motor1_speed = max(min(motor1_speed, 128), -128)
-    motor2_speed = max(min(motor2_speed, 128), -128)
-    motor3_speed = max(min(motor3_speed, 128), -128)
-    motor4_speed = max(min(motor4_speed, 128), -128)
+    fl = max(min(fr, 128), -128)
+    fr = max(min(fl, 128), -128)
+    bl = max(min(bl, 128), -128)
+    br = max(min(br, 128), -128)
 
     # Print motor speeds for debugging
-    print("Motor 1 Speed:", motor1_speed)
-    print("Motor 2 Speed:", motor2_speed)
-    print("Motor 3 Speed:", motor3_speed)
-    print("Motor 4 Speed:", motor4_speed)
+    print("Motor 1 Speed:", fl)
+    print("Motor 2 Speed:", fr)
+    print("Motor 3 Speed:", bl)
+    print("Motor 4 Speed:", br)
 
-    motor_speeds = [motor1_speed, motor2_speed, motor3_speed, motor4_speed]
+    motor_speeds = [fl, fr, bl, br]
 
     return motor_speeds 
