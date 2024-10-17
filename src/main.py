@@ -1,5 +1,3 @@
-# main.py
-
 from udp_receive import receive_udp_and_send_uart
 
 def main():

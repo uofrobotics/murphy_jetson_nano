@@ -1,5 +1,3 @@
-# udp_receive.py
-
 import socket
 import json
 import time
